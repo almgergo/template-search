@@ -1,0 +1,19 @@
+<div class="container">
+  <button type="button" (click)="addComponent()" class="btn btn-primary">Add component</button>
+  <button type="button" (click)="printValues()" class="btn btn-success">List values</button>
+
+  <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+      Add filter
+      <span class="caret"></span>
+    </button>
+    <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+      <li role="menuitem" *ngFor="let filter of filterTypes" (click)="addComponent(filter.component)">
+        <a class="dropdown-item" href="#">{{filter.name}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template appTemplateElementDirective>
+  </ng-template>
+</div>

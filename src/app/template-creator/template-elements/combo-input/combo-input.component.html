@@ -1,0 +1,23 @@
+<form>
+
+  <div class="form-group">
+    <label for="nameInput">Name</label>
+    <input type="text" class="form-control" id="nameInput" placeholder="Describe the filter" [(ngModel)]="value.name" name="nameInput">
+  </div>
+
+  <label for="nameInput">Add values</label>
+  <div class="row form-group" style="margin: auto">
+    <div class="col" style="padding-left:0px; padding-right: 0px;">
+      <input type="text" class="form-control " id="newComboValue" #newValueInput placeholder="Add new value">
+    </div>
+    <div class="col-auto" style="padding-left:15px; padding-right: 0px;">
+      <button type="submit" class="btn btn-primary" (click)="addNewValue(newValueInput)">Add value</button>
+    </div>
+  </div>
+
+  <div class="row form-group" style="margin-left: 0px">
+    <div class="col-auto combo-enum" *ngFor="let comboValue of value.values" (dragstart)="dragstart($event, comboValue)" (dragenter)="dragover($event, comboValue)">
+      <button type="button" class="btn btn-outline-primary my-animation" (click)="removeElement(comboValue)" draggable="true">{{comboValue.order}}: {{comboValue.value}}</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+@keyframes MyAnimation {
+    0% {
+        background-color: turquoise;
+    }
+    100% {
+    }
+}
+
+.my-animation {
+    animation: MyAnimation 1s;
+}
+
+div.combo-enum {
+    margin: 2px;
+    padding: 2px;
+}
+
+.centered {
+    margin-top: auto;
+    margin-bottom: auto;
+}
