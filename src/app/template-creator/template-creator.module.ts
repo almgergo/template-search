@@ -12,6 +12,7 @@ import { RangeInputComponent } from './template-elements/range-input/range-input
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { StringInputComponent } from './template-elements/string-input/string-input.component';
 
 @NgModule({
     imports: [
@@ -25,13 +26,14 @@ import { MatDatepickerModule, MatNativeDateModule, MatFormFieldModule, MatInputM
         MatFormFieldModule,
         MatInputModule
     ],
-    entryComponents: [ComboInputComponent, TemplateWrapperComponent, RangeInputComponent],
+    entryComponents: [ComboInputComponent, TemplateWrapperComponent, RangeInputComponent, StringInputComponent],
     declarations: [
         TemplatePageComponent,
         ComboInputComponent,
         TemplateElementDirectiveDirective,
         TemplateWrapperComponent,
-        RangeInputComponent
+        RangeInputComponent,
+        StringInputComponent,
     ],
     exports: [TemplatePageComponent]
 })

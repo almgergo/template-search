@@ -1,5 +1,5 @@
 export enum FilterType {
-    COMBO = 'Combo filter',
-    TEXT = 'Text filter',
-    RANGE = 'Range filter'
+    COMBO = 'Combo',
+    TEXT = 'Text',
+    RANGE = 'Range'
 }

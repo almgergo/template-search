@@ -5,6 +5,8 @@ import { ComboInputComponent } from '../template-elements/combo-input/combo-inpu
 import { TemplateWrapperComponent } from '../template-wrapper/template-wrapper.component';
 import { FilterType } from '../filter-types.enum';
 import { RangeInputComponent } from '../template-elements/range-input/range-input.component';
+import { StringInputComponent } from '../template-elements/string-input/string-input.component';
+import { TemplateDto } from './template-dto';
 
 @Component({
     selector: 'app-template-page',
@@ -14,19 +16,24 @@ import { RangeInputComponent } from '../template-elements/range-input/range-inpu
 export class TemplatePageComponent implements OnInit {
     filterTypes: { component: Type<TemplateElementComponent>; name: string }[];
     filterWrappers: ComponentRef<TemplateWrapperComponent>[];
+    templateDto: TemplateDto;
 
     @ViewChild(TemplateElementDirectiveDirective) adHost: TemplateElementDirectiveDirective;
 
     constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
     ngOnInit() {
+        this.templateDto = new TemplateDto();
+
         this.filterWrappers = [];
         this.filterTypes = [
             { component: ComboInputComponent, name: FilterType.COMBO },
-            { component: RangeInputComponent, name: FilterType.RANGE }
+            { component: RangeInputComponent, name: FilterType.RANGE },
+            { component: StringInputComponent, name: FilterType.TEXT }
         ];
         this.addComponent(RangeInputComponent);
         this.addComponent(ComboInputComponent);
+        this.addComponent(StringInputComponent);
     }
 
     addComponent(componentType: Type<TemplateElementComponent>) {

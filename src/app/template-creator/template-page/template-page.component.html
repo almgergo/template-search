@@ -1,5 +1,4 @@
 <div class="container">
-  <button type="button" (click)="addComponent()" class="btn btn-primary">Add component</button>
   <button type="button" (click)="printValues()" class="btn btn-success">List values</button>
 
   <div class="btn-group" dropdown>
@@ -14,6 +13,18 @@
     </ul>
   </div>
 
-  <ng-template appTemplateElementDirective>
-  </ng-template>
+  <div class="container">
+    <h2 class="list-element">Create a new template</h2>
+    <div class="form-group list-element" >
+      <h4 for="nameInput">Name of the template</h4>
+      <input type="text" class="form-control" placeholder="Describe the template with a short name" [(ngModel)]="templateDto.name"
+        name="templateName">
+    </div>
+
+    <div class="form-group list-element">
+      <h4 for="nameInput">List of filters</h4>
+      <ng-template appTemplateElementDirective>
+      </ng-template>
+    </div>
+  </div>
 </div>

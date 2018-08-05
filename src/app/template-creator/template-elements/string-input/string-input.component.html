@@ -1,0 +1,15 @@
+<form>
+
+  <div class="form-group">
+    <label for="nameInput">Name</label>
+    <input type="text" class="form-control" placeholder="Describe the filter" [(ngModel)]="value.name" name="nameInput">
+  </div>
+
+  <div class="form-check form-group">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" [(ngModel)]="value.multipleChoice" name="multipleChoice">
+      Multiple choice
+    </label>
+  </div>
+
+</form>

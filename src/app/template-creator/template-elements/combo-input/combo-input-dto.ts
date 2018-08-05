@@ -5,6 +5,7 @@ export class ComboInput extends FilterElement {
     filterType = FilterType.COMBO;
     name: string;
     values: ComboElement[];
+    multipleChoice: boolean;
 
     id = 0;
 

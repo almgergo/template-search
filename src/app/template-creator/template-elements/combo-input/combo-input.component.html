@@ -5,6 +5,14 @@
     <input type="text" class="form-control" id="nameInput" placeholder="Describe the filter" [(ngModel)]="value.name" name="nameInput">
   </div>
 
+  <div class="form-check form-group">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox" [(ngModel)]="value.multipleChoice" name="multipleChoice">
+      Multiple choice
+    </label>
+  </div>
+
+
   <label for="nameInput">Add values</label>
   <div class="row form-group" style="margin: auto">
     <div class="col" style="padding-left:0px; padding-right: 0px;">
@@ -15,7 +23,7 @@
     </div>
   </div>
 
-  <div class="row form-group" style="margin-left: 0px">
+  <div class="row form-group" style="margin-left: 0px; margin-top: 10px">
     <div class="col-auto combo-enum" *ngFor="let comboValue of value.values" (dragstart)="dragstart($event, comboValue)" (dragenter)="dragover($event, comboValue)">
       <button type="button" class="btn btn-outline-primary my-animation" (click)="removeElement(comboValue)" draggable="true">{{comboValue.order}}: {{comboValue.value}}</button>
     </div>
